@@ -18,6 +18,7 @@
 
     <modules>
          <module>gateway</module>
+        <module>authority</module>
     </modules>
 
     <properties>
