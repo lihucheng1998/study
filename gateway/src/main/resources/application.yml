@@ -7,3 +7,10 @@ spring:
   cloud:
     nacos:
       server-addr: 139.196.72.191:8848
+    gateway:
+      routes:
+        - id: cloud_authority
+          uri: lb://cloud_authority
+          predicates:
+            - Path=/user/**
+
