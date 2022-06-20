@@ -10,7 +10,7 @@ spring:
     gateway:
       routes:
         - id: cloud_authority
-          uri: lb://cloud_authority
+          uri: lb://cloudAuthority
           predicates:
             - Path=/user/**
 

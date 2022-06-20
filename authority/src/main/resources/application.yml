@@ -2,7 +2,7 @@ server:
   port: 8081
 spring:
   application:
-    name: cloud_authority
+    name: cloudAuthority
   cloud:
     nacos:
       server-addr: 139.196.72.191:8848
