@@ -19,6 +19,7 @@
     <modules>
          <module>gateway</module>
         <module>authority</module>
+        <module>common</module>
     </modules>
 
     <properties>

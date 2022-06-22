@@ -1,11 +1,12 @@
 package com.example.authority.controller;
 
+import com.example.authority.from.LoginBody;
 import com.example.authority.pojo.User;
+import com.example.authority.service.TokenService;
 import com.example.authority.service.UserService;
+import com.example.common.response.Result;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author 21167
@@ -15,9 +16,18 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
      @Autowired
      private UserService userService;
+     @Autowired
+     private TokenService tokenService;
 
      @GetMapping(value = "/getUser")
-     public User getUser(){
-         return userService.getUser();
+     public Result<?> getUser(){
+         return Result.success(userService.getUser());
+     }
+
+     @PostMapping(value = "/login")
+     public Result<?> login(@RequestBody LoginBody loginBody){
+         //用户登录
+         User user=userService.login(loginBody);
+         return Result.success(tokenService.createToken(user));
      }
 }
