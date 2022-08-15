@@ -5,8 +5,6 @@ import com.example.authority.pojo.User;
 import com.example.authority.service.TokenService;
 import com.example.authority.service.UserService;
 import com.example.common.response.Result;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
